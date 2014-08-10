@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+		<title>Color Board</title>
+
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="styles.css">
+		
+		<script src="jquery-1.9.1.js"></script>
+		<script src="tile.js"></script>
+		<script src="board.js"></script>
+		<script src="game.js"></script>
+	</head>
+
+	<body>
+		<h2>color board <span class="glyphicon glyphicon-pencil"></span></h2>
+
+		<div id="container">
+			<div id="boardContainer">
+			</div>
+		</div>
+			
+		<div id="resetContainer" style="clear:both">
+			<a href="index.html">
+				<button class="btn btn-success">
+					<span class="glyphicon glyphicon-arrow-left"></span>
+				</button>
+			</a>
+			<button id="reset" class="btn btn-info">
+				<span class="glyphicon glyphicon-refresh"></span>
+			</button>
+		</div>
+
+		<script type='text/javascript'>
+			var game = new colorBoard.Game(10, 10);
+		</script>
+
+		<script>
+			$('.tile').css("background-color", "rgb(255, 255, 255)");
+
+			$('.tile').click(function(){
+
+				var colors = ["salmon", "deepskyblue", "burlywood", "mediumorchid", "sandybrown", "peachpuff", "yellowgreen", "lightcoral", "lightpink", "lightblue", "palegreen", "paleturquoise", "rosybrown", "thistle", "tomato", "turquoise", "violet", "plum", "palevioletred", "royalblue", "seagreen", "springgreen", "teal"];
+
+				var color = colors[Math.floor(Math.random() * colors.length)];
+				var tile = $(this)[0];
+
+				if($(tile).css("background-color")=="rgb(255, 255, 255)"){
+					$($(tile)[0]).css("background-color", color);
+				} else{
+					$($(tile)[0]).css("background-color", "rgb(255, 255, 255)");
+				}
+
+			})
+
+			$('#reset').click(function(){
+				$('.tile').css("background-color", "rgb(255, 255, 255)");
+			})
+		</script>
+	</body>
+</html>

@@ -1,0 +1,34 @@
+body{
+	text-align: center;
+	background-color: black;
+	color:white;
+}
+
+h2{
+	margin-top: 70px;
+	margin-bottom: 50px;
+}
+
+#container{
+	width:330px;
+	height:330px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+#resetContainer{
+	margin-top: 5px;
+}
+
+.tile{
+	border:1px solid black;
+	margin:1px;
+	border-radius: 6px;
+	float:left;
+	height:30px;
+	width:30px;
+}
+
+.panel{
+	margin-bottom: 40px;
+}
